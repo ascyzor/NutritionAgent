@@ -82,7 +82,7 @@ Return ONLY valid JSON array with no markdown, no preamble:
         ]))
 
         response = openai.chat.completions.create(
-            model="gpt-5",
+            model="gpt-4o",
             messages=messages,
             max_tokens=2000,
             temperature=0.2
@@ -94,8 +94,8 @@ Return ONLY valid JSON array with no markdown, no preamble:
             print(f"Raw Vision Response:\\n{content}")
 
         # Clean up response (remove markdown if present)
-        if content.startswith('\`\`\`'):
-            content = content.split('\`\`\`')[1]
+        if content.startswith('```'):
+            content = content.split('```')[1]
             if content.startswith('json'):
                 content = content[4:]
 

@@ -67,7 +67,7 @@ if 'analysis' not in st.session_state:
 # HEADER
 # ============================================================================
 
-st.markdown('<div class="main-header">🍽️ AI Menu Nutrition Analyzer</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"> AI Menu Nutrition Analyzer</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-header">Make healthier dining choices with AI-powered nutrition analysis</div>',
             unsafe_allow_html=True)
 
@@ -123,7 +123,7 @@ with st.sidebar:
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.subheader("📸 Upload Menu Photo")
+    st.subheader("Upload Menu Photo")
     uploaded_file = st.file_uploader(
         "Choose a menu image (JPG, PNG)",
         type=['jpg', 'jpeg', 'png'],
@@ -137,16 +137,16 @@ with col1:
 
 with col2:
     if uploaded_file:
-        st.subheader("🔍 Analysis Progress")
+        st.subheader(" Analysis Progress")
 
         # Analyze button
-        if st.button("🚀 Analyze Menu", type="primary", use_container_width=True):
+        if st.button(" Analyze Menu", type="primary", use_container_width=True):
 
             # ================================================================
             # STEP 1: EXTRACT DISHES FROM IMAGE
             # ================================================================
-            with st.status("📖 Extracting dishes from menu...", expanded=True) as status:
-                st.write("🤖 Using GPT-4 Vision to read menu...")
+            with st.status(" Extracting dishes from menu...", expanded=True) as status:
+                st.write(" Using GPT-4 Vision to read menu...")
 
                 try:
                     uploaded_file.seek(0)  # Reset file pointer
@@ -171,8 +171,8 @@ with col2:
             # STEP 2: FETCH NUTRITION DATA
             # ================================================================
             if st.session_state.dishes:
-                with st.status("📊 Fetching nutrition data...", expanded=True) as status:
-                    st.write("🔍 Querying nutrition databases...")
+                with st.status(" Fetching nutrition data...", expanded=True) as status:
+                    st.write(" Querying nutrition databases...")
 
                     try:
                         progress_bar = st.progress(0)
@@ -210,7 +210,7 @@ with col2:
             # ================================================================
             if st.session_state.get('dishes_with_nutrition'):
                 with st.status("🧠 Generating personalized recommendations...", expanded=True) as status:
-                    st.write("🤖 AI agent analyzing menu for your profile...")
+                    st.write(" AI agent analyzing menu for your profile...")
 
                     try:
                         user_prefs = {
@@ -242,7 +242,7 @@ if st.session_state.get('analysis'):
     analysis = st.session_state.analysis
 
     st.divider()
-    st.header("📊 Your Personalized Analysis")
+    st.header(" Your Personalized Analysis")
 
     # ========================================================================
     # TOP METRICS
@@ -268,7 +268,7 @@ if st.session_state.get('analysis'):
         for i, pick in enumerate(analysis['top_picks'][:3], 1):
             with st.expander(f"#{i} {pick['name']}", expanded=(i == 1)):
                 st.markdown(f"**Why it's great:** {pick['why_good']}")
-                st.info(f"📊 {pick['nutrition_highlights']}")
+                st.info(f" {pick['nutrition_highlights']}")
                 if pick.get('eating_tips'):
                     st.success(f"💡 Pro tip: {pick['eating_tips']}")
     else:
@@ -279,7 +279,7 @@ if st.session_state.get('analysis'):
     # ========================================================================
     if analysis.get('meal_combos'):
         st.divider()
-        st.subheader("🍱 Recommended Meal Combinations")
+        st.subheader(" Recommended Meal Combinations")
 
         for combo in analysis['meal_combos']:
             with st.container():
@@ -291,9 +291,9 @@ if st.session_state.get('analysis'):
                 combo_cols[2].metric("Carbs", f"{combo['total_carbs']}g")
                 combo_cols[3].metric("Fat", f"{combo['total_fat']}g")
 
-                st.success(f"✨ {combo['why_good']}")
+                st.success(f" {combo['why_good']}")
                 if combo.get('cost_estimate'):
-                    st.caption(f"💰 Estimated cost: {combo['cost_estimate']}")
+                    st.caption(f" Estimated cost: {combo['cost_estimate']}")
 
                 st.divider()
 
@@ -325,7 +325,7 @@ if st.session_state.get('analysis'):
     # ========================================================================
     # FULL RANKINGS (COLLAPSIBLE)
     # ========================================================================
-    with st.expander("📋 See All Dishes Ranked"):
+    with st.expander(" See All Dishes Ranked"):
         if analysis.get('ranked_dishes'):
             for dish in analysis['ranked_dishes']:
                 col1, col2, col3 = st.columns([1, 4, 1])
@@ -346,7 +346,7 @@ if st.session_state.get('analysis'):
 st.divider()
 st.markdown("""
     <div style='text-align: center; color: #666; padding: 2rem;'>
-        <p>🚀 Built for Hackathon | Powered by GPT-4 Vision & Nutrition APIs</p>
-        <p>💡 Remember: This tool provides suggestions. Always consult healthcare professionals for medical advice.</p>
+        <p> This app shows only Demo | Powered by GPT-4 Vision & Nutrition APIs</p>
+        <p> Remember: This tool provides suggestions. Always consult healthcare professionals for medical advice.</p>
     </div>
 """, unsafe_allow_html=True)

@@ -1,4 +1,4 @@
-#  AI Nutrition Agent: Multimodal Menu Analyzer & Diet Assistant
+#  AI Nutrition Agent: Menu Analyzer & Diet Assistant
 
 
 An **Agentic AI System** that transforms unstructured restaurant menu images into personalized, health-conscious recommendations.

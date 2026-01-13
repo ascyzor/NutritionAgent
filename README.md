@@ -7,10 +7,10 @@ An **Agentic AI System** that transforms unstructured restaurant menu images int
 
 ## Key Features
 
-*  Multimodal Perception:** Digitizes complex or handwritten menus using Vision LLMs.
-*  Personalization Engine:** Automatically filters menu items based on user health profiles (e.g., Vegan, Keto, Diabetic-friendly).
-*  Data Integration:** Designed to interface with Public Nutrition Databases (Government APIs) for real-time calorie and macronutrient tracking.
-*  ReAct Agent Workflow:** Uses a reasoning-based approach (Think-Act-Observe) to ensure recommendations are logical and safe.
+*  Multimodal Perception: Digitizes complex or handwritten menus using Vision LLMs.
+*  Personalization Engine: Automatically filters menu items based on user health profiles (e.g., Vegan, Keto, Diabetic-friendly).
+*  Data Integration: Designed to interface with Public Nutrition Databases (Government APIs) for real-time calorie and macronutrient tracking.
+*  Agent Workflow: Uses a reasoning-based approach (Think-Act-Observe) to ensure recommendations are logical and safe.
 
 ---
 

@@ -1,12 +1,13 @@
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
 # Load environment variables
 load_dotenv()
 
 # API Keys
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-USDA_API_KEY = os.getenv("USDA_API_KEY")
+OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+USDA_API_KEY = st.secrets.get("USDA_API_KEY", os.getenv("USDA_API_KEY"))
 
 # Application Settings
 DEBUG_MODE = os.getenv("DEBUG_MODE", "False") == "True"
